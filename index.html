@@ -3,18 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>BrightPath</title>
     <link rel="stylesheet" href="index.css">
   </head>
   <body>
     <nav>
       <div class="brand">BrightPath</div>
-      <div class="nav-link">
+
+      <!-- Add id="nav-menu" here -->
+      <div class="nav-link" id="nav-menu">
         <span style="color: #737373;">Home</span>
         <span style="color: #737373;">Product</span>
         <span style="color: #737373;">Pricing</span>
         <span style="color: #737373;">Contact</span>
       </div>
+
       <div class="nav-last">
         <span style="color: #96BB7C;">Login</span>
         <button>
@@ -22,8 +25,14 @@
           <img src="/arrorw.png" alt="" class="image"/>
         </button>
       </div>
+
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </nav>
 
-    
+    <script src="script.js"></script>
   </body>
 </html>
