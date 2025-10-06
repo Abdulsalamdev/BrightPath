@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+  }
+  nav {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding-top: 20px;
+width: 80%;
+margin: auto;
+  }
+
+.brand {
+    font-size: 24px;
+    line-height: 32px;
+    color: #252B42;
+}
+div span {
+    font-size: 14px;
+    font-weight: 700;
+}
+.nav-link {
+    display: flex;
+    gap: 21px;
+}
+.nav-last{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+button {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-block: 15px;
+    padding-inline: 15px;
+    border-radius: 5px;
+    background-color: #96BB7C;
+}
+button span {
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+
+@media (max-width: 768px) {
+    .nav-link {
+        display: none;
+    }
+}
+
