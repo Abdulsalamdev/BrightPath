@@ -4,25 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BrightPath</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
     <nav>
       <div class="brand">BrightPath</div>
 
-      <!-- Add id="nav-menu" here -->
-      <div class="nav-link" id="nav-menu">
-        <span style="color: #737373;">Home</span>
-        <span style="color: #737373;">Product</span>
-        <span style="color: #737373;">Pricing</span>
-        <span style="color: #737373;">Contact</span>
+      <!-- Normal nav links visible on desktop/tablet -->
+      <div class="nav-link">
+        <span>Home</span>
+        <span>Product</span>
+        <span>Pricing</span>
+        <span>Contact</span>
       </div>
 
       <div class="nav-last">
-        <span style="color: #96BB7C;">Login</span>
+        <span class="login">Login</span>
         <button>
           <span>JOIN US</span>
-          <img src="/arrorw.png" alt="" class="image"/>
+          <img src="/arrorw.png" alt="" class="image" />
         </button>
       </div>
 
@@ -32,6 +32,19 @@
         <span></span>
       </div>
     </nav>
+
+    <!-- Sidebar for mobile -->
+    <div class="sidebar" id="nav-menu">
+      <div class="sidebar-header">
+        <div class="close-btn" id="close-btn">&times;</div>
+      </div>
+      <div class="sidebar-links">
+        <span>Home</span>
+        <span>Product</span>
+        <span>Pricing</span>
+        <span>Contact</span>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>

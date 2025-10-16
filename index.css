@@ -3,85 +3,168 @@
   padding: 0;
   box-sizing: border-box;
   border: none;
+  font-family: "Poppins", sans-serif;
 }
+
+body {
+  background: #f8f9fa;
+  overflow-x: hidden;
+}
+
+/* NAVBAR */
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 20px;
-  width: 80%;
+  width: 90%;
   margin: auto;
+  padding: 20px 0;
 }
 
 .brand {
   font-size: 24px;
-  line-height: 32px;
+  font-weight: 700;
   color: #252b42;
 }
-div span {
-  font-size: 14px;
-  font-weight: 700;
-}
+
 .nav-link {
   display: flex;
   gap: 21px;
 }
+
+.nav-link span {
+  font-size: 14px;
+  font-weight: 700;
+  color: #737373;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav-link span:hover {
+  color: #96bb7c;
+}
+
 .nav-last {
   display: flex;
   align-items: center;
   gap: 30px;
 }
+
+.nav-last .login {
+  color: #96bb7c;
+  font-weight: 600;
+  cursor: pointer;
+}
+
 button {
   display: flex;
   align-items: center;
-  gap: 15px;
-  padding-block: 15px;
-  padding-inline: 15px;
+  gap: 10px;
+  padding: 12px 18px;
   border-radius: 5px;
   background-color: #96bb7c;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
+
 button span {
   color: white;
   font-size: 14px;
   font-weight: 700;
 }
+
+button:hover {
+  background-color: #7fa663;
+  transform: scale(1.05);
+}
+
+/* HAMBURGER */
 .hamburger {
   display: none;
   flex-direction: column;
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
-    .nav-last {
-        display:  none;
-    }
-  .nav-link {
-    display: none;
-    flex-direction: column;
-    gap: 15px;
-    background-color: white;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    padding: 20px;
-  }
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: #252b42;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: 0.4s ease;
+}
 
-  .nav-link.active {
-    display: flex;
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -280px;
+  width: 260px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #96bb7c, #5a8f50, #96bb7c);
+  background-size: 300% 300%;
+  animation: bgShift 6s infinite alternate;
+  box-shadow: -2px 0 15px rgba(0, 0, 0, 0.1);
+  transition: right 0.5s ease-in-out;
+  z-index: 100;
+  padding: 30px 20px;
+}
+
+.sidebar.active {
+  right: 0;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.close-btn {
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.close-btn:hover {
+  transform: scale(1.2);
+}
+
+.sidebar-links {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.sidebar-links span {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.sidebar-links span:hover {
+  transform: translateX(-10px);
+  color: #e9f5e4;
+}
+
+/* Gradient Animation */
+@keyframes bgShift {
+  0% {
+    background-position: 0% 50%;
   }
-  .hamburger {
-    display: flex;
-  }
-  .hamburger span {
-    height: 3px;
-    width: 25px;
-    background: black;
-    margin: 4px 0;
-    transition: 0.4s;
+  100% {
+    background-position: 100% 50%;
   }
 }
 
+/* Hamburger active animation */
 .hamburger.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -90,4 +173,21 @@ button span {
 }
 .hamburger.active span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 900px) {
+  .nav-link {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-last {
+    display: none;
+  }
 }
